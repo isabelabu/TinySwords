@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8h14fp33uqv1"]
+
+[ext_resource type="Texture2D" uid="uid://dxmbgsvanxvek" path="res://addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="1_3mqis"]
+[ext_resource type="Script" path="res://ui/game_over_ui.gd" id="1_hs212"]
+[ext_resource type="Texture2D" uid="uid://bttrg674uh2o0" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_v0vdr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pukw2"]
+texture = ExtResource("1_3mqis")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="SystemFont" id="SystemFont_54gyy"]
+font_names = PackedStringArray("Forte")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7u8ra"]
+font = SubResource("SystemFont_54gyy")
+font_size = 20
+font_color = Color(0.0862745, 0.109804, 0.180392, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_faj7v"]
+texture = ExtResource("2_v0vdr")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_lvfh0"]
+font_names = PackedStringArray("Forte")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u0nwb"]
+font = SubResource("SystemFont_lvfh0")
+font_color = Color(0.0862745, 0.109804, 0.180392, 1)
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_hs212")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0, 0.0627451, 0.611765)
+
+[node name="TopPanel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -243.0
+offset_top = 75.0
+offset_right = -23.0
+offset_bottom = 152.0
+grow_horizontal = 2
+scale = Vector2(2.2427, 2.2427)
+theme_override_styles/panel = SubResource("StyleBoxTexture_pukw2")
+
+[node name="GameOverLabel" type="Label" parent="TopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.4932
+offset_top = -22.4479
+offset_right = 59.5068
+offset_bottom = 0.552055
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_7u8ra")
+
+[node name="BottomPanel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -437.0
+offset_top = -371.0
+offset_right = -157.0
+offset_bottom = -266.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.10324, 3.10324)
+theme_override_styles/panel = SubResource("StyleBoxTexture_faj7v")
+
+[node name="CenterContainer" type="CenterContainer" parent="BottomPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.8963
+offset_top = -39.9325
+offset_right = 88.1037
+offset_bottom = 2.0675
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="BottomPanel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+columns = 2
+
+[node name="Label" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Time survived: "
+label_settings = SubResource("LabelSettings_u0nwb")
+
+[node name="TimeLabel" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "14:59"
+label_settings = SubResource("LabelSettings_u0nwb")
+
+[node name="Label2" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Monsters defeated:"
+label_settings = SubResource("LabelSettings_u0nwb")
+
+[node name="MonstersLabel" type="Label" parent="BottomPanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_u0nwb")

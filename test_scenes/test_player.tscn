@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn52o58uejk75"]
+
+[ext_resource type="Texture2D" uid="uid://y5ww3emtekdf" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_6trde"]
+[ext_resource type="PackedScene" uid="uid://wvdp4vimnl23" path="res://player/player.tscn" id="2_4smn7"]
+[ext_resource type="PackedScene" uid="uid://3ue5xeppv7xd" path="res://enemies/pawn.tscn" id="3_owfwd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x8u1f"]
+line_spacing = 30.0
+
+[node name="TestPlayer" type="Node2D"]
+
+[node name="WarriorPurple" type="Sprite2D" parent="."]
+position = Vector2(1798, 902)
+texture = ExtResource("1_6trde")
+
+[node name="Label" type="Label" parent="WarriorPurple"]
+anchors_preset = -1
+anchor_right = 0.12
+anchor_bottom = 0.048
+offset_left = -490.0
+offset_top = -848.0
+offset_right = -361.24
+offset_bottom = -825.0
+scale = Vector2(3.68891, 3.68891)
+text = "0         1           2          3          4           5"
+
+[node name="Label2" type="Label" parent="WarriorPurple"]
+anchors_preset = -1
+anchor_right = 0.12
+anchor_bottom = 0.048
+offset_left = -612.0
+offset_top = -720.0
+offset_right = -728.24
+offset_bottom = -399.728
+scale = Vector2(3.68891, 3.68891)
+text = "0 1 2 3 4 5 6 7"
+label_settings = SubResource("LabelSettings_x8u1f")
+autowrap_mode = 2
+
+[node name="Player" parent="." instance=ExtResource("2_4smn7")]
+position = Vector2(92, 92)
+
+[node name="Pawn" parent="." instance=ExtResource("3_owfwd")]
+position = Vector2(180, 94)
+
+[node name="Pawn2" parent="." instance=ExtResource("3_owfwd")]
+position = Vector2(744, 338)
+
+[node name="Pawn3" parent="." instance=ExtResource("3_owfwd")]
+position = Vector2(370, 476)
+
+[node name="Pawn4" parent="." instance=ExtResource("3_owfwd")]
+position = Vector2(823, 102)

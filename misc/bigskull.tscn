@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7lhy5ocdctu"]
+
+[ext_resource type="PackedScene" uid="uid://dwv4iat0hrfue" path="res://misc/skull.tscn" id="1_uvv2l"]
+
+[node name="Skull" instance=ExtResource("1_uvv2l")]
+modulate = Color(0.862168, 0.7469, 0.97, 1)
+scale = Vector2(2, 2)
